@@ -1,0 +1,34 @@
+<style>
+    body{
+        text-align: center;
+    }
+</style>
+
+
+<body id = 'body'>
+
+</body>
+
+<script>
+    linearray = []
+ 
+    let body = document.getElementById('body');
+    var am = prompt('noem een getal : ');
+    for(let lineNR = 1; lineNR<= am ; lineNR++){
+        linearray.push(lineNR);
+        line = linearray.join('-')
+        
+        let element = document.createElement('P'); // p element netals zin
+        element.innerHTML = line; // printen van nummers
+        body.appendChild(element);
+    }
+
+    for(let lineNR = am;lineNR >= 0;lineNR--){
+        linearray.pop();
+        line = linearray.join('-');
+        let element = document.createElement('P');
+        element.innerHTML = line; //printen van nummers
+        body.appendChild(element);
+    }
+
+</script>

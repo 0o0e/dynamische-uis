@@ -7,11 +7,14 @@
 <body>
     <script>
       document.write("<center>");
-      var getal = prompt('noem een getal : ');
+         
+      // var getal = prompt('noem een getal : ');
+      var getal = 20;
+
       let leegte = ''
       var n = getal -1
 
-
+      
       for(i = 1; i <= getal; i++){
          var p = 1;
          for(j = 1; j <= i; j++){
@@ -19,17 +22,28 @@
             ');
          }
          document.write("<br/>")
-
       }
       
+
       for(i = 1; i <= n; i++){
          var a = 1;
          for(k = i; k <= n; k++){
             document.write(a ++ + ' \
             ');
-         }
+         } 
          document.write("<br/>")
       }
+
+      // for(i = 20; i >= 1; i--){
+      //    // var a = [20]
+      //    var a = 20;
+      //    for(k = 20; k >= i; k--){
+      //       document.write(a -- + ' \
+      //       ');
+      //    }
+      //    document.write("<br/>")
+      // }
+
 
     </script>  
 

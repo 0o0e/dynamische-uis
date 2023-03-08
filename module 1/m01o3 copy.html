@@ -1,0 +1,35 @@
+<style>
+   body{
+       text-align: center;
+   }
+</style>
+
+<body id = 'ruit'>
+    <script>
+         
+      var getal = prompt('noem een getal : ');
+
+      var array = []
+
+      
+      for(i = 1; i <= getal; i++){
+         var p = 1;
+         array.push(i)
+         line = array.join('-')
+         document.write("<br/>")
+      document.write(line)
+      // document.getElementById("ruit").innerHTML = line;
+      }
+      
+
+      for(let i = getal;i >= 0;i--){
+         array.pop();
+         line = array.join('-');
+         document.write("<br/>")
+      document.write(line)
+      }
+
+
+    </script>  
+
+ </body>
