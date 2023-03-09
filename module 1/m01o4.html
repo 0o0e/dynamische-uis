@@ -2,91 +2,83 @@
 
 <html lang="nl">
 	
-	<head>
-		<meta charset="UTF-8">
-		<title>opdr 4</title>
 
-	</head>
 <p id = 'bier'></p>
 <p id = 'wijn'></p>
 <p id = 'fris'></p>
 
+<body>
 
+    <script>
+        var bestelling = ''
+        var bier_pr = 4
+        var fris_pr = 2
+        var wijn_pr = 5
 
-	<body>
-
-        <script>
-            var bestelling = ''
-            var bier_pr = 4
-            var fris_pr = 2
-            var wijn_pr = 5
-
-            bier = false
-            wijn = false
-            fris = false
-            while (bestelling != 'stop'){
-                var bestelling =  prompt('wat wilt u bestellen? (voer stop in om uw bestelling af te ronden) ');
-                if(bestelling == 'fris' || bestelling == 'wijn' || bestelling == 'bier'){
-                    var hoeveel = parseInt(prompt('hoevaak wilt u dit? '));
-                    if (bestelling == 'fris'){
-                        var array_fris = {};
-                        array_fris[bestelling] = hoeveel;
-                        fris = true
-                    }else if (bestelling == 'wijn'){
-                        var array_wijn = {};
-                        array_wijn[bestelling] = hoeveel;
-                        wijn = true
-                    }else if (bestelling == 'bier'){
-                        var array_bier = {};
-                        array_bier[bestelling] = hoeveel;
-                        bier = true
-                    }
-                }else if(bestelling == 'stop'){
-                    break;
-                }else{
-                    alert('hebben we niet')
+        bier = false
+        wijn = false
+        fris = false
+        while (bestelling != 'stop'){
+            var bestelling =  prompt('wat wilt u bestellen? (voer stop in om uw bestelling af te ronden) ');
+            if(bestelling == 'fris' || bestelling == 'wijn' || bestelling == 'bier'){
+                var hoeveel = parseInt(prompt('hoevaak wilt u dit? '));
+                if (bestelling == 'fris'){
+                    var array_fris = {};
+                    array_fris[bestelling] = hoeveel;
+                    fris = true
+                }else if (bestelling == 'wijn'){
+                    var array_wijn = {};
+                    array_wijn[bestelling] = hoeveel;
+                    wijn = true
+                }else if (bestelling == 'bier'){
+                    var array_bier = {};
+                    array_bier[bestelling] = hoeveel;
+                    bier = true
                 }
+            }else if(bestelling == 'stop'){
+                break;
+            }else{
+                alert('hebben we niet')
             }
+        }
 
-            function berekening_bier(){
-                var bestellingen_bier = {};
-                bestellingen_bier["bier"] = (array_bier["bier"] * bier_pr);
-                return 'bier: €' + bestellingen_bier['bier']
-            }
-            function berekening_wijn(){
-                var bestellingen_wijn = {};
-                bestellingen_wijn["wijn"] = (array_wijn["wijn"] * wijn_pr);
-                return 'wijn: €' + bestellingen_wijn['wijn']
-            }
-            function berekening_fris(){
-                var bestellingen_fris = {};
-                bestellingen_fris["fris"] = (array_fris["fris"] * fris_pr);
-                return 'fris: €' +bestellingen_fris['fris']
-            }
+        function berekening_bier(){
+            var bestellingen_bier = {};
+            bestellingen_bier["bier"] = (array_bier["bier"] * bier_pr);
+            return 'bier: €' + bestellingen_bier['bier']
+        }
+        function berekening_wijn(){
+            var bestellingen_wijn = {};
+            bestellingen_wijn["wijn"] = (array_wijn["wijn"] * wijn_pr);
+            return 'wijn: €' + bestellingen_wijn['wijn']
+        }
+        function berekening_fris(){
+            var bestellingen_fris = {};
+            bestellingen_fris["fris"] = (array_fris["fris"] * fris_pr);
+            return 'fris: €' +bestellingen_fris['fris']
+        }
 
-             
+            
 
-            if (bier == true){
-                document.getElementById("bier").innerHTML = JSON.stringify(berekening_bier());
-            }if (wijn== true ){
-                document.getElementById("wijn").innerHTML = JSON.stringify(berekening_wijn());
-            }if (fris == true){
-                document.getElementById("fris").innerHTML = JSON.stringify(berekening_fris());
-            }
+        if (bier == true){
+            document.getElementById("bier").innerHTML = JSON.stringify(berekening_bier());
+        }if (wijn== true ){
+            document.getElementById("wijn").innerHTML = JSON.stringify(berekening_wijn());
+        }if (fris == true){
+            document.getElementById("fris").innerHTML = JSON.stringify(berekening_fris());
+        }
 
-            // if (bier == true){
-            //     document.write(JSON.stringify(berekening_bier()))
-            // }if (wijn== true ){
-            //     document.write(JSON.stringify(berekening_wijn()))
-            // }if (fris == true){
-            //     document.write(JSON.stringify(berekening_fris()))
-            // }
-
-
+        // if (bier == true){
+        //     document.write(JSON.stringify(berekening_bier()))
+        // }if (wijn== true ){
+        //     document.write(JSON.stringify(berekening_wijn()))
+        // }if (fris == true){
+        //     document.write(JSON.stringify(berekening_fris()))
+        // }
 
 
-        </script>
-		
-	</body>
+    </script>
+    
+</body>
 
 </html>
