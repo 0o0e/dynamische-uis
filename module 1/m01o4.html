@@ -18,6 +18,7 @@
         bier = false
         wijn = false
         fris = false
+        
         while (bestelling != 'stop'){
             var bestelling =  prompt('wat wilt u bestellen? (voer stop in om uw bestelling af te ronden) ');
             if(bestelling == 'fris' || bestelling == 'wijn' || bestelling == 'bier'){
@@ -59,14 +60,16 @@
         }
 
             
-
-        if (bier == true){
-            document.getElementById("bier").innerHTML = JSON.stringify(berekening_bier());
-        }if (wijn== true ){
-            document.getElementById("wijn").innerHTML = JSON.stringify(berekening_wijn());
-        }if (fris == true){
-            document.getElementById("fris").innerHTML = JSON.stringify(berekening_fris());
+        function bon(){
+            if (bier == true){
+                document.getElementById("bier").innerHTML = berekening_bier();
+            }if (wijn== true ){
+                document.getElementById("wijn").innerHTML = berekening_wijn();
+            }if (fris == true){
+                document.getElementById("fris").innerHTML = berekening_fris();
+            }
         }
+        bon()
 
         // if (bier == true){
         //     document.write(JSON.stringify(berekening_bier()))
