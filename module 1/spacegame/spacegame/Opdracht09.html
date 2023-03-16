@@ -18,20 +18,17 @@
         spaceShip.run(function () {
             // code  start
             let hoevaak = 4
-            let hoeveel = 5
             spaceShip.rotateRight();
             for(i = 0; i < 4; i++){
                 for(var begin = 0; begin < hoevaak; begin++){
                     spaceShip.moveForward(); 
                 }
                 spaceShip.rotateRight();
-                for(var begin = 0; begin < hoeveel; begin++){
+                for(var begin = 0; begin < hoevaak + 1; begin++){
                     spaceShip.moveForward(); 
                 }
                 spaceShip.rotateRight();
                 hoevaak--;
-                hoeveel--;
-
             }
 
 

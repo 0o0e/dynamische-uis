@@ -14,27 +14,24 @@
         var bier_pr = 4
         var fris_pr = 2
         var wijn_pr = 5
+        
 
-        bier = false
-        wijn = false
-        fris = false
+        var array_fris = {'fris' : 0};
+        var array_wijn = {'wijn' : 0};
+        var array_bier = {'bier' : 0};
+
+
         
         while (bestelling != 'stop'){
             var bestelling =  prompt('wat wilt u bestellen? (voer stop in om uw bestelling af te ronden) ');
             if(bestelling == 'fris' || bestelling == 'wijn' || bestelling == 'bier'){
                 var hoeveel = parseInt(prompt('hoevaak wilt u dit? '));
                 if (bestelling == 'fris'){
-                    var array_fris = {};
-                    array_fris[bestelling] = hoeveel;
-                    fris = true
+                    array_fris[bestelling] += hoeveel;
                 }else if (bestelling == 'wijn'){
-                    var array_wijn = {};
-                    array_wijn[bestelling] = hoeveel;
-                    wijn = true
+                    array_wijn[bestelling] += hoeveel;
                 }else if (bestelling == 'bier'){
-                    var array_bier = {};
-                    array_bier[bestelling] = hoeveel;
-                    bier = true
+                    array_bier[bestelling] += hoeveel;
                 }
             }else if(bestelling == 'stop'){
                 break;
@@ -44,28 +41,22 @@
         }
 
         function berekening_bier(){
-            var bestellingen_bier = {};
-            bestellingen_bier["bier"] = (array_bier["bier"] * bier_pr);
-            return 'bier: €' + bestellingen_bier['bier']
+            return 'bier: €' + (array_bier["bier"] * bier_pr);
         }
         function berekening_wijn(){
-            var bestellingen_wijn = {};
-            bestellingen_wijn["wijn"] = (array_wijn["wijn"] * wijn_pr);
-            return 'wijn: €' + bestellingen_wijn['wijn']
+            return 'wijn: €' + (array_wijn["wijn"] * wijn_pr);
         }
         function berekening_fris(){
-            var bestellingen_fris = {};
-            bestellingen_fris["fris"] = (array_fris["fris"] * fris_pr);
-            return 'fris: €' +bestellingen_fris['fris']
+            return 'fris: €' + (array_fris["fris"] * fris_pr);
         }
 
             
         function bon(){
-            if (bier == true){
+            if (array_bier.bier != 0){
                 document.getElementById("bier").innerHTML = berekening_bier();
-            }if (wijn== true ){
+            }if (array_wijn.wijn != 0){
                 document.getElementById("wijn").innerHTML = berekening_wijn();
-            }if (fris == true){
+            }if (array_fris.fris != 0){
                 document.getElementById("fris").innerHTML = berekening_fris();
             }
         }
