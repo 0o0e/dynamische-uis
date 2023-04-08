@@ -1,5 +1,21 @@
-.box{
-    width: 600px;
-    height: 600px;
-    background-image: url('/dynamische-uis/module 2/buttons-template/images/bg0.jpg');
+
+.container{
+    height: 660px;
+    width: 660px;
+    border: 3px solid grey;
+}
+#button *{
+    background-color: rgb(17, 165, 66);
+    color: white;
+    padding: 10px 40px 10px 40px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#image1{
+    height: 450px;
+    margin-left: 50px;
+}
+#image2{
+    margin-left: 500px;
+
 }
