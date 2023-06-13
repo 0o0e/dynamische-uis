@@ -4,16 +4,16 @@ buttonscontainer.style.display = "flex";
 buttonscontainer.style.justifyContent = "center";
 buttonscontainer.style.alignItems = "center";
 buttonscontainer.style.flexWrap = "wrap";
-var clickcount = 0
 
 for(var i =1; i <= 30; i++){
 
     var button = document.createElement("button");
-    button.textContent = "Button" + i;
+    button.textContent = i;
     button.className ="button"
     buttonscontainer.appendChild(button);
 
     button.clickcount = 0
+    
 
     // button.addEventListener("click", function() {
     //     this.style.backgroundColor = "red";
